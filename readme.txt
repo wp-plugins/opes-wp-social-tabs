@@ -1,6 +1,6 @@
 === Opes WP Social Tabs ===
 Contributors: twapaw
-Tags: social, media, slider, tab, sliders, tabs, fb, facebook, google+, gp
+Tags: social, media, slider, tab, sliders, tabs, facebook, fb, google, google plus, gp, youtube, yt
 Requires at least: 3.5.0
 Tested up to: 4.1.1
 Stable tag: 1.0.0
