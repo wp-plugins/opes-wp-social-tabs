@@ -17,8 +17,8 @@ Opes WP Social Tabs allows you to add and manage social sliders on your WordPres
 Major features in Opes WP Social Tabs include:
 
 * Facebook slider
-* Google+ slider (in the next review 1.0.1)
-* Youtube slider (in the next review 1.0.1)
+* Google+ slider (in the next review 1.1.0)
+* Youtube slider (in the next review 1.2.0)
 
 == Installation ==
 

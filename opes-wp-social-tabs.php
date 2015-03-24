@@ -4,7 +4,7 @@
  */
 /*
 Plugin Name: Opes WP Social Tabs
-Plugin URI: 
+Plugin URI: https://wordpress.org/plugins/opes-wp-social-tabs/
 Description: Opes WP Social Tabs allows you to add and manage social sliders on your WordPress website.
 Version: 1.0.0
 Author: Paweł Twardziak
