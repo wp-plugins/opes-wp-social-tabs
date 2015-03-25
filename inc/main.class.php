@@ -136,10 +136,10 @@ class _OWPST_jdvu__Main {
 		if ( is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles ) && isset( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ] ) ) {
 			if ( is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ] ) ) {
 				if ( isset( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'js' ] ) && is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'js' ] ) ) {
-					$type = 'js/';
+					$type = 'js' . __OWPST_jdvu__PS_;
 					
 					foreach ( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'js' ] as $script ) {
-						$script[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__COMMON_URL_ . 'assets/' . $type . $script[ 'src' ];
+						$script[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__COMMON_URL_ . 'assets' . __OWPST_jdvu__PS_ . $type . $script[ 'src' ];
 						if ( isset( $script[ 'hook_deps' ] ) ) {
 							if ( is_string( $script[ 'hook_deps' ] ) ) {
 								if ( strpos( $hook , trim( $script[ 'hook_deps' ] ) ) ) {
@@ -159,10 +159,10 @@ class _OWPST_jdvu__Main {
 					}
 				}
 				if ( isset( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'css' ] ) && is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'css' ] ) ) {
-					$type = 'css/';
+					$type = 'css' . __OWPST_jdvu__PS_;
 
 					foreach ( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'css' ] as $style ) {
-						$style[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__COMMON_URL_ . 'assets/' . $type . $style[ 'src' ];
+						$style[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__COMMON_URL_ . 'assets' . __OWPST_jdvu__PS_ . $type . $style[ 'src' ];
 						if ( isset( $style[ 'hook_deps' ] ) ) {
 							if ( is_string( $style[ 'hook_deps' ] ) ) {
 								if ( strpos( $hook , trim( $style[ 'hook_deps' ] ) ) ) {
@@ -192,10 +192,10 @@ class _OWPST_jdvu__Main {
 		if ( is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles ) && isset( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ] ) ) {
 			if ( is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ] ) ) {
 				if ( isset( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'js' ] ) && is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'js' ] ) ) {
-					$type = 'js/';
+					$type = 'js' . __OWPST_jdvu__PS_;
 
 					foreach ( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'js' ] as $script ) {
-						$script[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__ADMIN_URL_ . 'assets/' . $type . $script[ 'src' ];
+						$script[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__ADMIN_URL_ . 'assets' . __OWPST_jdvu__PS_ . $type . $script[ 'src' ];
 						if ( isset( $script[ 'hook_deps' ] ) ) {
 							if ( is_string( $script[ 'hook_deps' ] ) ) {
 								if ( strpos( $hook , trim( $script[ 'hook_deps' ] ) ) ) {
@@ -215,9 +215,9 @@ class _OWPST_jdvu__Main {
 					}
 				}
 				if ( isset( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'css' ] ) && is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'css' ] ) ) {
-					$type = 'css/';
+					$type = 'css' . __OWPST_jdvu__PS_;
 					foreach ( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'css' ] as $style ) {
-						$style[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__ADMIN_URL_ . 'assets/' . $type . $style[ 'src' ];
+						$style[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__ADMIN_URL_ . 'assets' . __OWPST_jdvu__PS_ . $type . $style[ 'src' ];
 						if ( isset( $style[ 'hook_deps' ] ) ) {
 							if ( is_string( $style[ 'hook_deps' ] ) ) {
 								if ( strpos( $hook , trim( $style[ 'hook_deps' ] ) ) ) {
@@ -247,10 +247,10 @@ class _OWPST_jdvu__Main {
 		if ( is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles ) && isset( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ] ) ) {
 			if ( is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ] ) ) {
 				if ( isset( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'js' ] ) && is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'js' ] ) ) {
-					$type = 'js/';
+					$type = 'js' . __OWPST_jdvu__PS_;
 
 					foreach ( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'js' ] as $script ) {
-						$script[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets/' . $type . $script[ 'src' ];
+						$script[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets' . __OWPST_jdvu__PS_ . $type . $script[ 'src' ];
 						if ( isset( $script[ 'hook_deps' ] ) ) {
 							if ( is_string( $script[ 'hook_deps' ] ) ) {
 								if ( strpos( $hook , trim( $script[ 'hook_deps' ] ) ) ) {
@@ -270,10 +270,10 @@ class _OWPST_jdvu__Main {
 					}
 				}
 				if ( isset( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'css' ] ) && is_array( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'css' ] ) ) {
-					$type = 'css/';
+					$type = 'css' . __OWPST_jdvu__PS_;
 
 					foreach ( _OWPST_jdvu__Conf::$defaultScriptsAndStyles[ $space ][ 'css' ] as $style ) {
-						$style[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets/' . $type . $style[ 'src' ];
+						$style[ 'src' ] = __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets' . __OWPST_jdvu__PS_ . $type . $style[ 'src' ];
 						if ( isset( $style[ 'hook_deps' ] ) ) {
 							if ( is_string( $style[ 'hook_deps' ] ) ) {
 								if ( strpos( $hook , trim( $style[ 'hook_deps' ] ) ) ) {

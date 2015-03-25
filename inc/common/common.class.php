@@ -11,12 +11,12 @@ class _OWPST_jdvu__Common {
 			}
 		}
 
-		$PHP_ToLoad = scandir( __OWPST_jdvu__THIS_PLUGIN__COMMON_DIR_ . 'controller/' );
+		$PHP_ToLoad = scandir( __OWPST_jdvu__THIS_PLUGIN__COMMON_DIR_ . 'controller' . __OWPST_jdvu__PS_ );
 		$PHP_ToLoad = preg_grep( '/-ToLoad\.php$/i' , $PHP_ToLoad );
 		sort ( $PHP_ToLoad , SORT_STRING );
 
 		foreach ( $PHP_ToLoad as $key => $fileName ) {
-			include( __OWPST_jdvu__THIS_PLUGIN__COMMON_DIR_ . 'controller/' . $fileName );
+			include( __OWPST_jdvu__THIS_PLUGIN__COMMON_DIR_ . 'controller' . __OWPST_jdvu__PS_ . $fileName );
 		}
 /*
 		$directory = new RecursiveDirectoryIterator( __OWPST_jdvu__THIS_PLUGIN__COMMON_DIR_ . 'controller/' );

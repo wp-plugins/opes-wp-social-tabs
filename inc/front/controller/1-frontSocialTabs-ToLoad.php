@@ -32,61 +32,56 @@ class _OWPST_jdvu__FrontSocialTabs {
 	}
 
 	public function enqueueSocialTabsScripts() {
-		wp_enqueue_script( 'opes-wp-social-tabs' , __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets/js/script-front.js' , array( 'jquery' ) , '1.0.0' , false );
+		wp_enqueue_script( 'opes-wp-social-tabs' , __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets' . __OWPST_jdvu__PS_ . 'js'.__OWPST_jdvu__PS_.'script-front.js' , array( 'jquery' ) , '1.0.0' , false );
 
-		$social_tabs_html = '<script src="https://apis.google.com/js/platform.js" async defer>{lang: \'pl\'}</script>';
+		$social_tabs_html_new = '';
 
-		$social_tabs_html .= '<div class="opes-wp-social-tabs" id="opes-wp-social-tabs-1" style="position: fixed; top: 120px; right: 0px;">';
-			
-			$social_tabs_html .= '<div class="social-tabs-content" id="social-tabs-content-1" style="position: relative;">';
-				$social_tabs_html .= '<ul class="social-tabs" id="social-tabs-1" style="position: absolute; list-style-type: none; left: -35px;">';
-					if ( isset( $this->options[ 'social_links' ][ 'fb' ] ) ) {
-						$social_tabs_html .= '<li id="fb"><img src="'.__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_.'assets/images/fb-tab.png" style="width: 35px;"></li>';
-					}
-					if ( isset( $this->options[ 'social_links' ][ 'gp' ] ) ) {
-						$social_tabs_html .= '<li id="gp"><img src="'.__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_.'assets/images/gp-tab.png" style="width: 35px;"></li>';
-					}
-					if ( isset( $this->options[ 'social_links' ][ 'yt' ] ) ) {
-						$social_tabs_html .= '<li id="yt"><img src="'.__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_.'assets/images/yt-tab.png" style="width: 35px;"></li>';
-					}
-				$social_tabs_html .= '</ul>';
+		$fromTop = 100;
+		$tabID = 1;
 
-				$social_tabs_html .= '<ul class="social-sliders" id="social-sliders-1" style="position: absolute; left: 0px; list-style-type: none; width: 360px; /*height: 630px;*/ overflow: hidden;">';
-					if ( isset( $this->options[ 'social_links' ][ 'fb' ] ) ) {
+		if ( isset( $this->options[ 'social_links' ][ 'fb' ] ) 
+			//&& 1==2
+			) {
+			$social_tabs_html_new .= '<div class="opes-wp-social-tab tab-'.$tabID.'" id="opes-wp-social-tab-fb" style="position: fixed; right: -360px; top:'.$fromTop.'px; width: 360px;">';
 
-						$iframe = '<iframe src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F'.$this->options[ 'social_links' ][ 'fb' ].'&amp;width=360&amp;connections=36&amp;stream=false&amp;header=true&amp;height=630" scrolling="no" frameborder="0" style="border: none; background: #fff; overflow: hidden; width: 360px; height: 630px;" allowtransparency="true"></iframe>';
+				$social_tabs_html_new .= '<div class="hover-tab" id="hover-tab-fb" style="position: absolute; top: 0px; left: -35px; height: 109px; float: left; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"><img src="'.__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_.'assets/images/fb-tab.png" style="width: 35px; height: 109px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"></div>';
 
-						$social_tabs_html .= '<li id="fb-slide" style="display: none;">'.$iframe.'</li>';
-					}
-					if ( isset( $this->options[ 'social_links' ][ 'gp' ] ) ) {
+				$social_tabs_html_new .= '<div class="content-tab" id="content-tab-fb" style="float: left; postion: relative; width: 360px; /*height: 100%;*/ overflow: visible; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;">';
 
-						$iframe = '<div class="g-person" data-width="360" data-href="https://plus.google.com/'.$this->options[ 'social_links' ][ 'gp' ].'" data-rel="author"></div>';
+					$iframe = '<iframe src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F'.$this->options[ 'social_links' ][ 'fb' ].'&amp;width=360&amp;connections=36&amp;stream=false&amp;header=true&amp;height=630" scrolling="no" frameborder="0" style="border: none; background: #fff; overflow: hidden; width: 360px; height: 630px;" allowtransparency="true"></iframe>';
 
-						$social_tabs_html .= '<li id="gp-slide" style="display: none;">'.$iframe.'</li>';
-					}
-					if ( isset( $this->options[ 'social_links' ][ 'yt' ] ) ) {
+					$social_tabs_html_new .= '<div class="iframe-content" id="iframe-content-fb" style="position: absolute;">'.$iframe.'</div>';
 
-						$iframe = '';
+				$social_tabs_html_new .= '</div>';
 
-						$social_tabs_html .= '<li id="yt-slide" style="display: none;">'.$iframe.'</li>';
-					}
-				$social_tabs_html .= '</ul>';
-			$social_tabs_html .= '</div>';
+			$social_tabs_html_new .= '</div>';
 
-		$social_tabs_html .= '</div>';
+			$tabID++;
+			$fromTop = $fromTop + 109;
+		}
 
-		$social_tabs_html .= '';
-		$social_tabs_html .= '';
-		$social_tabs_html .= '';
-		$social_tabs_html .= '';
-		$social_tabs_html .= '';
-		$social_tabs_html .= '';
-		$social_tabs_html .= '';
-		$social_tabs_html .= '';
-		$social_tabs_html .= '';
+		if ( isset( $this->options[ 'social_links' ][ 'gp' ] ) ) {
+			$social_tabs_html_new .= '<div class="opes-wp-social-tab tab-'.$tabID.'" id="opes-wp-social-tab-gp" style="position: fixed; right: -360px; top:'.$fromTop.'px; width: 360px;">';
 
+				$social_tabs_html_new .= '<div class="hover-tab" id="hover-tab-gp" style="position: absolute; top: 0px; left: -35px; height: 109px; float: left; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"><img src="'.__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_.'assets/images/gp-tab.png" style="width: 35px; height: 109px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"></div>';
 
-		wp_localize_script( 'opes-wp-social-tabs' , 'social_tabs_html' , $social_tabs_html );
+				$social_tabs_html_new .= '<div class="content-tab" id="content-tab-gp" style="float: left; postion: relative; width: 360px; /*height: 100%;*/ overflow: visible; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;">';
+
+					$iframe = '<div class="g-'.$this->options[ 'social_links' ][ 'gp_g_type' ].'" data-width="360" data-href="https://plus.google.com/'.$this->options[ 'social_links' ][ 'gp' ].'" data-layout="portrait" data-theme="light" data-rel="publisher" data-showtagline="true" data-showcoverphoto="true"></div>';
+
+					$iframe .= '<script type="text/javascript">'."window.___gcfg = {lang: 'pl'};(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/platform.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>";
+
+					$social_tabs_html_new .= '<div class="iframe-content" id="iframe-content-gp" style="position: absolute;">'.$iframe.'</div>';
+
+				$social_tabs_html_new .= '</div>';
+
+			$social_tabs_html_new .= '</div>';
+
+			$tabID++;
+			$fromTop = $fromTop + 150;
+		}
+
+		wp_localize_script( 'opes-wp-social-tabs' , 'social_tabs_html' , $social_tabs_html_new );
 	}
 
 	public function enqueueSocialTabsStyles() {
@@ -94,4 +89,4 @@ class _OWPST_jdvu__FrontSocialTabs {
 	}
 }
 
-_OWPST_jdvu__FrontSocialTabs::init( $params ); 
+_OWPST_jdvu__FrontSocialTabs::init( $params );

@@ -6,7 +6,7 @@
 Plugin Name: Opes WP Social Tabs
 Plugin URI: https://wordpress.org/plugins/opes-wp-social-tabs/
 Description: Opes WP Social Tabs allows you to add and manage social sliders on your WordPress website.
-Version: 1.0.0
+Version: 1.1.0
 Author: Paweł Twardziak
 Author URI: http://it-opes.com/
 License: GPLv2 or later
@@ -30,8 +30,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
 define( '__OWPST_jdvu__DS_' , DIRECTORY_SEPARATOR );
-define( '__OWPST_jdvu__PS_' , PATH_SEPARATOR );
-define( '__OWPST_jdvu__THIS_PLUGIN__VERSION_' , '1.0.0' );
+define( '__OWPST_jdvu__PS_' , '/' );
+define( '__OWPST_jdvu__THIS_PLUGIN__VERSION_' , '1.1.0' );
 define( '__OWPST_jdvu__THIS_PLUGIN__MAIN_FILE_' , __FILE__ );
 define( '__OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_' , '__OWPST_jdvu__' );
 
@@ -45,10 +45,10 @@ define( '__OWPST_jdvu__THIS_PLUGIN__ADMIN_DIR_' , __OWPST_jdvu__THIS_PLUGIN__INC
 define( '__OWPST_jdvu__THIS_PLUGIN__FRONT_DIR_' , __OWPST_jdvu__THIS_PLUGIN__INC_DIR_ . 'front' . __OWPST_jdvu__DS_ );
 
 define( '__OWPST_jdvu__THIS_PLUGIN__URL_' , plugin_dir_url( __FILE__ ) );
-define( '__OWPST_jdvu__THIS_PLUGIN__INC_URL_' , __OWPST_jdvu__THIS_PLUGIN__URL_ . 'inc/' );
-define( '__OWPST_jdvu__THIS_PLUGIN__COMMON_URL_' , __OWPST_jdvu__THIS_PLUGIN__INC_URL_ . 'common/' );
-define( '__OWPST_jdvu__THIS_PLUGIN__ADMIN_URL_' , __OWPST_jdvu__THIS_PLUGIN__INC_URL_ . 'admin/' );
-define( '__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_' , __OWPST_jdvu__THIS_PLUGIN__INC_URL_ . 'front/' );
+define( '__OWPST_jdvu__THIS_PLUGIN__INC_URL_' , __OWPST_jdvu__THIS_PLUGIN__URL_ . 'inc' . __OWPST_jdvu__PS_ );
+define( '__OWPST_jdvu__THIS_PLUGIN__COMMON_URL_' , __OWPST_jdvu__THIS_PLUGIN__INC_URL_ . 'common' . __OWPST_jdvu__PS_ );
+define( '__OWPST_jdvu__THIS_PLUGIN__ADMIN_URL_' , __OWPST_jdvu__THIS_PLUGIN__INC_URL_ . 'admin' . __OWPST_jdvu__PS_ );
+define( '__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_' , __OWPST_jdvu__THIS_PLUGIN__INC_URL_ . 'front' . __OWPST_jdvu__PS_ );
 
 require_once __OWPST_jdvu__THIS_PLUGIN__DIR_ . "conf.php";
 require_once __OWPST_jdvu__THIS_PLUGIN__INC_DIR_ . "main.class.php";

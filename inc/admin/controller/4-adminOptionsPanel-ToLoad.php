@@ -24,6 +24,8 @@ class _OWPST_jdvu__adminOptionsPanel {
 	private function __construct( $params ) {
 		global $_OWPST_jdvu__InitData;
 
+		register_activation_hook( __OWPST_jdvu__THIS_PLUGIN__MAIN_FILE_ , array( $this , 'activatePluginActions' ) );
+
 		$this->optionsPanelSlug = $_OWPST_jdvu__InitData->plugin_short_slug . '_options';
 		add_action( 'admin_menu', array( $this , 'registerAdminOptionsPanel' ) );
 
@@ -32,6 +34,21 @@ class _OWPST_jdvu__adminOptionsPanel {
 	
 	public static function init( $params ) {
 		return new _OWPST_jdvu__adminOptionsPanel( $params );
+	}
+
+	public function activatePluginActions() {
+		global $_OWPST_jdvu__InitData;
+
+		$main_settings = get_option( $this->optionsPanelSlug . '_main_settings' , false );
+		$social_links = get_option( $this->optionsPanelSlug . '_social_links' , false );
+
+		if ( !is_array( $main_settings ) ) {
+			update_option( $this->optionsPanelSlug . '_main_settings' , $this->initialOptions[ 'main_settings_group' ][ 'main_settings' ] );
+		};
+
+		if ( !is_array( $social_links ) ) {
+			update_option( $this->optionsPanelSlug . '_social_links' , $this->initialOptions[ 'social_links_group' ][ 'social_links' ] );
+		};
 	}
 
 	public function registerAdminOptionsPanel() {
@@ -43,7 +60,7 @@ class _OWPST_jdvu__adminOptionsPanel {
 			'manage_options', 
 			$this->optionsPanelSlug,
 			array( $this , 'displayAdminOptionsPanel' ), 
-			__OWPST_jdvu__THIS_PLUGIN__ADMIN_URL_ . 'assets/images/icon-20-green.png',
+			__OWPST_jdvu__THIS_PLUGIN__ADMIN_URL_ . 'assets' . __OWPST_jdvu__PS_ . 'images' . __OWPST_jdvu__PS_ . 'icon-20-green.png',
 			81
 		);
 	}
@@ -93,7 +110,7 @@ class _OWPST_jdvu__adminOptionsPanel {
 			</p>
 		</form>
 
-		<h3><?php _e( 'Social links' , __OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_ ) ?></h3>
+		<h3><?php _e( 'Social IDs' , __OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_ ) ?></h3>
 		<form method="post" action="options.php">
 	<?php 
 			settings_fields( $this->optionsPanelSlug . '_social_links_group' ); 
@@ -112,8 +129,7 @@ class _OWPST_jdvu__adminOptionsPanel {
 						?>" />
 					</td>
 				</tr>
-<?php
-/*				
+				
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Google Plus ID' , __OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_ ); ?></th>
 					<td>
@@ -121,10 +137,22 @@ class _OWPST_jdvu__adminOptionsPanel {
 							if ( isset( $social_links[ 'gp' ] ) && is_string( trim( $social_links[ 'gp' ] ) ) ) {
 								echo trim( $social_links[ 'gp' ] ) ; 
 							}
-						?>" />
+						?>" /><br/>
+						<?php 
+							if ( isset( $social_links[ 'gp_g_type' ] ) && trim( $social_links[ 'gp_g_type' ] ) != '' ) {
+								$selected = $social_links[ 'gp_g_type' ];
+							} else {
+								$selected = '';
+							}
+						?>
+						<select name="<?php echo $this->optionsPanelSlug; ?>_social_links[gp_g_type]">
+							<option value="person" <?php if ( $selected == 'person' ) echo 'selected="selected"'; ?> ><?php _e( 'Person' , __OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_ ); ?></option>
+							<option value="page" <?php if ( $selected == 'page' ) echo 'selected="selected"'; ?>><?php _e( 'Page' , __OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_ ); ?></option>
+						</select> <?php _e( 'G-type' , __OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_ ); ?>
 					</td>
 				</tr>
-
+<?php
+/*
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Youtube ID' , __OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_ ); ?></th>
 					<td>
@@ -177,6 +205,10 @@ class _OWPST_jdvu__adminOptionsPanel {
 			};
 			if ( isset( $inputs[ 'gp' ] ) &&  is_string( trim( $inputs[ 'gp' ] ) ) && trim( $inputs[ 'gp' ] ) != '' ) {
 				$validateInputs[ 'gp' ] = trim( $inputs[ 'gp' ] );
+
+				if ( isset( $inputs[ 'gp_g_type' ] ) &&  is_string( trim( $inputs[ 'gp_g_type' ] ) ) && trim( $inputs[ 'gp_g_type' ] ) != '' ) {
+					$validateInputs[ 'gp_g_type' ] = trim( $inputs[ 'gp_g_type' ] );
+				};
 			};
 			if ( isset( $inputs[ 'yt' ] ) &&  is_string( trim( $inputs[ 'yt' ] ) ) && trim( $inputs[ 'yt' ] ) != '' ) {
 				$validateInputs[ 'yt' ] = trim( $inputs[ 'yt' ] );

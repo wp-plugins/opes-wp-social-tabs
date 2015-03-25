@@ -1,32 +1,19 @@
-.opes-wp-social-tabs,
-.opes-wp-social-tabs * {
-	z-index: 9999;
-	padding: 0px;
-	margin: 0px;
-	border: none;
-	outline: none;
+.opes-wp-social-tab,
+.opes-wp-social-tab * {
+	z-index: 99999;
 }
 
-.opes-wp-social-tabs .social-tabs li {
-	
-}
-
-.opes-wp-social-tabs .social-tabs li img {
+.opes-wp-social-tab .hover-tab img {
 	border-left: 0px solid transparent;
 	border-top: 0px solid transparent;
 	border-bottom: 0px solid transparent;
 
 	background-color: #fff;
-
+	
 	-webkit-border-top-left-radius: 8px;
 	-webkit-border-bottom-left-radius: 8px;
 	-moz-border-radius-topleft: 8px;
 	-moz-border-radius-bottomleft: 8px;
 	border-top-left-radius: 8px;
 	border-bottom-left-radius: 8px;
-}
-
-.opes-wp-social-tabs .social-sliders {
-	background-color: #fff;
-	z-index: 10000;
 }

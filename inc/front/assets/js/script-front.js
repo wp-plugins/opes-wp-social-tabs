@@ -2,71 +2,26 @@ jQuery( function() {
 
 	jQuery( 'body' ).prepend( social_tabs_html );
 
-	jQuery( 'body' ).find( '.opes-wp-social-tabs ul.social-tabs li' ).hover( 
+	jQuery( 'body' ).find( '.opes-wp-social-tab' ).hover(
 		function() {
 			var this_tab = this;
 
-			var slide_id = jQuery( this_tab ).attr( 'id' );
-
-
-			jQuery( '.opes-wp-social-tabs' ).find( 'ul.social-sliders li' ).each( function( i , el ) {
-				if ( jQuery( el ).attr( 'id' ) == slide_id+'-slide' ) {
-					jQuery( el ).css( { display: 'block' } );
+			var tab_id = jQuery( this_tab ).attr( 'id' );
+			jQuery( '.opes-wp-social-tab' ).each( function( i , el ) {
+				if ( jQuery( el ).attr( 'id' ) == tab_id ) {
+					jQuery( el ).css( { zIndex: '999999' } );
 				} else {
-					jQuery( el ).css( { display: 'none' } );
+					jQuery( el ).css( { zIndex: '99999' } );
 				}
 			});
 
-			//console.log( slide_id+'-slide' );
-		}
-	);
-
-	jQuery( 'body' ).find( '.opes-wp-social-tabs' ).hover( 
-		function() {
-			var this_tabs = this;
-
-			jQuery( this_tabs ).find( 'ul.social-sliders' ).stop().animate( {left: '-360'} , { duration: 800 , easing: "swing" } );
-			//console.log( 'hover' );
+			jQuery( this_tab ).stop().animate( { right: '0px' } , 800 );
 		},
 		function() {
-			var this_tabs = this;
+			var this_tab = this;
 
-			jQuery( this_tabs ).find( 'ul.social-sliders' ).stop().animate( {left: '0'} , { duration: 400 , easing: "swing" } );
-			//console.log( 'unhover' );
+			jQuery( this_tab ).stop().animate( { right: '-360px' } , 400 );
 		}
 	);
-
-/*
-	jQuery( '.jdvu-wrap > a.counting' ).live( 'click' , function(e) {
-
-		e.preventDefault();
-		e.stopPropagation();
-
-		//alert( 'ok' );
-
-		var reklama_id = jQuery( this ).data( 'countedid' );
-
-		var data = {
-			action: 'jdvu_counter',
-			reklama_id: reklama_id
-		};
-
-		jQuery.ajax({
-			url: jdvu_ajaxurl,
-			data: data,
-			cache: false,
-			timeout: 10000,
-			type: 'POST',
-			dataType: 'html',
-			success: function( data ){
-				console.log( data );
-			},
-			error: function( data ){
-				console.log( 'błąd' );
-			}
-		});
-
-		return false;
-	});
-*/
+	
 });
