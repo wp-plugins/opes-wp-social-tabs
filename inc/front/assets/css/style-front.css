@@ -17,3 +17,11 @@
 	border-top-left-radius: 8px;
 	border-bottom-left-radius: 8px;
 }
+
+.opes-wp-social-tab #content-tab-yt #iframe-content-yt {
+	background: #fff;
+}
+
+.opes-wp-social-tab iframe {
+	margin: 0px !important;
+}

@@ -3,7 +3,7 @@ Contributors: twapaw
 Tags: social, media, slider, tab, sliders, tabs, facebook, fb, google, google plus, gp, youtube, yt
 Requires at least: 3.5.0
 Tested up to: 4.1.1
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 
 Opes WP Social Tabs allows you to add and manage social sliders on your WordPress website. 
@@ -18,7 +18,8 @@ Major features in Opes WP Social Tabs include:
 
 * Facebook slider
 * Google+ slider
-* Youtube slider (from the next review 1.2.0)
+* Youtube slider
+* Twitter slider (since 1.3.0 version, soon)
 
 == Installation ==
 
@@ -26,6 +27,11 @@ Major features in Opes WP Social Tabs include:
 * Go to "OWP Social Tabs" and set social sliders on your website!
 
 == Changelog ==
+
+= 1.2.0 =
+*Release Date - 9th April, 2015*
+
+* ADD: Youtube slider
 
 = 1.1.0 =
 *Release Date - 25th March, 2015*

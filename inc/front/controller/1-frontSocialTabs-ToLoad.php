@@ -42,6 +42,8 @@ class _OWPST_jdvu__FrontSocialTabs {
 		if ( isset( $this->options[ 'social_links' ][ 'fb' ] ) 
 			//&& 1==2
 			) {
+			$iframe = '';
+
 			$social_tabs_html_new .= '<div class="opes-wp-social-tab tab-'.$tabID.'" id="opes-wp-social-tab-fb" style="position: fixed; right: -360px; top:'.$fromTop.'px; width: 360px;">';
 
 				$social_tabs_html_new .= '<div class="hover-tab" id="hover-tab-fb" style="position: absolute; top: 0px; left: -35px; height: 109px; float: left; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"><img src="'.__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_.'assets/images/fb-tab.png" style="width: 35px; height: 109px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"></div>';
@@ -61,6 +63,8 @@ class _OWPST_jdvu__FrontSocialTabs {
 		}
 
 		if ( isset( $this->options[ 'social_links' ][ 'gp' ] ) ) {
+			$iframe = '';
+
 			$social_tabs_html_new .= '<div class="opes-wp-social-tab tab-'.$tabID.'" id="opes-wp-social-tab-gp" style="position: fixed; right: -360px; top:'.$fromTop.'px; width: 360px;">';
 
 				$social_tabs_html_new .= '<div class="hover-tab" id="hover-tab-gp" style="position: absolute; top: 0px; left: -35px; height: 109px; float: left; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"><img src="'.__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_.'assets/images/gp-tab.png" style="width: 35px; height: 109px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"></div>';
@@ -78,7 +82,28 @@ class _OWPST_jdvu__FrontSocialTabs {
 			$social_tabs_html_new .= '</div>';
 
 			$tabID++;
-			$fromTop = $fromTop + 150;
+			$fromTop = $fromTop + 109;
+		}
+
+		if ( isset( $this->options[ 'social_links' ][ 'yt' ] ) ) {
+			$iframe = '';
+
+			$social_tabs_html_new .= '<div class="opes-wp-social-tab tab-'.$tabID.'" id="opes-wp-social-tab-yt" style="position: fixed; right: -360px; top:'.$fromTop.'px; width: 360px;">';
+
+				$social_tabs_html_new .= '<div class="hover-tab" id="hover-tab-yt" style="position: absolute; top: 0px; left: -35px; height: 109px; float: left; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"><img src="'.__OWPST_jdvu__THIS_PLUGIN__FRONT_URL_.'assets/images/yt-tab.png" style="width: 35px; height: 109px; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;"></div>';
+
+				$social_tabs_html_new .= '<div class="content-tab" id="content-tab-yt" style="float: left; postion: relative; width: 360px; /*height: 100%;*/ overflow: visible; margin-top: 0px; margin-bottom: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px; padding-left: 0px;">';
+
+					$iframe = '<iframe frameborder="0" id="fr" scrolling="no" src="http://www.youtube.com/subscribe_widget?p='.$this->options[ 'social_links' ][ 'yt' ].'" style="overflow: hidden; height: 72px; width: 360px;border: 0"></iframe>';
+
+					$social_tabs_html_new .= '<div class="iframe-content" id="iframe-content-yt" style="position: absolute;">'.$iframe.'</div>';
+
+				$social_tabs_html_new .= '</div>';
+
+			$social_tabs_html_new .= '</div>';
+
+			$tabID++;
+			$fromTop = $fromTop + 150;			
 		}
 
 		wp_localize_script( 'opes-wp-social-tabs' , 'social_tabs_html' , $social_tabs_html_new );

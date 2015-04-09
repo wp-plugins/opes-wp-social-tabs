@@ -151,8 +151,7 @@ class _OWPST_jdvu__adminOptionsPanel {
 						</select> <?php _e( 'G-type' , __OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_ ); ?>
 					</td>
 				</tr>
-<?php
-/*
+				
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Youtube ID' , __OWPST_jdvu__THIS_PLUGIN__TEXT_DOMAIN_ ); ?></th>
 					<td>
@@ -163,8 +162,7 @@ class _OWPST_jdvu__adminOptionsPanel {
 						?>" />
 					</td>
 				</tr>
-*/
-?>
+
 			</table>
 			
 			<p>
