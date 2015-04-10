@@ -32,7 +32,7 @@ class _OWPST_jdvu__FrontSocialTabs {
 	}
 
 	public function enqueueSocialTabsScripts() {
-		wp_enqueue_script( 'opes-wp-social-tabs' , __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets' . __OWPST_jdvu__PS_ . 'js'.__OWPST_jdvu__PS_.'script-front.js' , array( 'jquery' ) , '1.0.0' , false );
+		wp_enqueue_script( 'opes-wp-social-tabs' , __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets' . __OWPST_jdvu__PS_ . 'js'.__OWPST_jdvu__PS_.'script-front.js' , array( 'jquery' ) , __OWPST_jdvu__THIS_PLUGIN__VERSION_ , false );
 
 		$social_tabs_html_new = '';
 
@@ -110,7 +110,7 @@ class _OWPST_jdvu__FrontSocialTabs {
 	}
 
 	public function enqueueSocialTabsStyles() {
-		wp_enqueue_style( 'opes-wp-social-tabs' , __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets/css/style-front.css' , array() , '1.0.0' , 'all' );
+		wp_enqueue_style( 'opes-wp-social-tabs' , __OWPST_jdvu__THIS_PLUGIN__FRONT_URL_ . 'assets/css/style-front.css' , array() , __OWPST_jdvu__THIS_PLUGIN__VERSION_ , 'all' );
 	}
 }
 

@@ -27,7 +27,7 @@ class _OWPST_jdvu__Conf {
 					'deps' => array(
 						'jquery'
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'post-new.php',
 						'post.php'
@@ -40,7 +40,7 @@ class _OWPST_jdvu__Conf {
 					'deps' => array(
 						'jquery'
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'post-new.php',
 						'post.php'
@@ -53,7 +53,7 @@ class _OWPST_jdvu__Conf {
 					'deps' => array(
 						'jquery'
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'post.php',
 						'post-new.php'
@@ -66,7 +66,7 @@ class _OWPST_jdvu__Conf {
 					'deps' => array(
 						'jquery'
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'edit.php',
 					)
@@ -79,7 +79,7 @@ class _OWPST_jdvu__Conf {
 						'jquery',
 						'owpst_jdvu_admin-pnotify-custom'
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'edit.php',
 					),
@@ -98,7 +98,7 @@ class _OWPST_jdvu__Conf {
 						'jquery',
 						'jquery-ui-dialog'
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'index.php',
 					)
@@ -110,7 +110,7 @@ class _OWPST_jdvu__Conf {
 					'deps' => array(
 						'jquery'
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'index.php',
 					)
@@ -124,7 +124,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'style-admin-single-project.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'post-new.php',
 						'post.php'
@@ -136,7 +136,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'jquery.datetimepicker.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'post.php',
 						'post-new.php'
@@ -148,7 +148,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'pnotify.custom.min.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'edit.php',
 					)
@@ -159,7 +159,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'jquery-ui.min.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'edit.php',
 						'index.php'
@@ -171,7 +171,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'jquery-ui.structure.min.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'edit.php',
 						'index.php'
@@ -183,7 +183,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'jquery-ui.theme.min.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'edit.php',
 						'index.php'
@@ -195,7 +195,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'style-admin-projects-list.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'edit.php',
 					)
@@ -206,7 +206,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'style-admin-dashboard.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'index.php'
 					)
@@ -217,7 +217,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'bootstrap.min.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'index.php',
 					)
@@ -228,7 +228,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'bootstrap-theme.min.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'hook_deps' => array(
 						'index.php',
 					)
@@ -245,7 +245,7 @@ class _OWPST_jdvu__Conf {
 					'deps' => array(
 						'jquery'
 					),
-					'ver' => '1.0.0',
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_,
 					'localize' => array(
 						'jdvu_ajaxurl' => __OWPST_jdvu__THIS_PLUGIN__ADMINAJAX_
 					)
@@ -259,7 +259,7 @@ class _OWPST_jdvu__Conf {
 					'src' => 'style-front-css.css',
 					'deps' => array(
 					),
-					'ver' => '1.0.0'
+					'ver' => __OWPST_jdvu__THIS_PLUGIN__VERSION_
 				)
 */
 			)
